@@ -1,42 +1,63 @@
 import memojiAvatar1 from "@/assets/images/memoji-avatar-1.png";
 import memojiAvatar2 from "@/assets/images/memoji-avatar-2.png";
-import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png";
-import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
-import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
+import { SectionHeader } from "@/components/SectionHeader";
+import ArrorUpRight from '@/assets/icons/arrow-up-right.svg';
+import Image from "next/image";
+import { Card } from "@/components/Card";
 
 const testimonials = [
   {
-    name: "Alex Turner",
-    position: "Marketing Manager @ TechStartups",
-    text: "Alex was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
+    name: "Roy Loeffler",
+    position: "Senior R&D Manager @ Mitel",
+    text: "Rutvik was one the most promising Angular developers I had in my team. I had the pleasure of being Rutvik's manager for almost a year. Rutvik came fresh out of college to Mitel, in that short year he had to learn Angular, become proficient and contribute to an aggressive portal build out plan. Not only did Rutvik become a strong contributor, also his level of proficiency in Angular made him the 'go to' person for all questions or challenges related to our UI work. I would certainly be happy to work with Rutvik again.",
     avatar: memojiAvatar1,
   },
   {
-    name: "Olivia Green",
-    position: "Head of Design @ GreenLeaf",
-    text: "Working with Alex was a pleasure. His expertise in frontend development brought our designs to life in a way we never imagined. The website has exceeded our expectations.",
+    name: "James Kappen",
+    position: "Commercial Real Estate Investor",
+    text: "Rutvik is an exceptional developer with a great attitude and a hunger to continually learn more. Our mobile project benefitted greatly from having him on our team and he will be an asset on any team that he contributes to.",
     avatar: memojiAvatar2,
-  },
-  {
-    name: "Daniel White",
-    position: "CEO @ InnovateCo",
-    text: "Alex's ability to create seamless user experiences is unmatched. Our website has seen a significant increase in conversions since launching the new design. We couldn't be happier.",
-    avatar: memojiAvatar3,
-  },
-  {
-    name: "Emily Carter",
-    position: "Product Manager @ GlobalTech",
-    text: "Alex is a true frontend wizard. He took our complex product and transformed it into an intuitive and engaging user interface. We're already seeing positive feedback from our customers.",
-    avatar: memojiAvatar4,
-  },
-  {
-    name: "Michael Brown",
-    position: "Director of IT @ MegaCorp",
-    text: "Alex's work on our website has been nothing short of exceptional. He's a talented developer who is also a great communicator. We highly recommend him.",
-    avatar: memojiAvatar5,
   },
 ];
 
 export const TestimonialsSection = () => {
-  return <div>Testimonials Section</div>;
+  return (
+    <section className="py-16 lg:py-24">
+      <div className="container">
+        <SectionHeader
+          title="Happy Teams"
+          eyebrow="What my co-workers say about me"
+          description="Don't just take my word for it. See what my peers have to say about me."
+        />
+        <div className="mt-16 lg:mt-24 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="flex flex-none gap-8">
+            {testimonials.map((testimonial) => {
+              return (
+                <Card key={testimonial.name} className="max-w-xs md:max-w-md lg:max-w-lg md:p-8">
+                  <div className="flex gap-4 items-center">
+                    <div className="size-14 bg-gray-700 inline-flex overflow-hidden items-center justify-center rounded-full flex-shrink-0">
+                      <Image src={testimonial.avatar} alt={testimonial.name} className="max-h-full" />
+                    </div>
+                    <div>
+                      <div className="font-semibold">{testimonial.name}</div>
+                      <div className="text-sm text-white/40">{testimonial.position}</div>
+                      <a href={'https://www.linkedin.com/in/rutvik1702/'}
+                        key={testimonial.name}
+                        target="_blank"
+                        className="font-serif italic text-sm text-blue-400 underline items-center inline-flex gap-1"
+                      >
+                        <span>View</span>
+                        <ArrorUpRight className='size-4' />
+                      </a>
+                    </div>
+                  </div>
+                  <p className="mt-4 md:mt-6 text-sm md:text-base">{testimonial.text}</p>
+                </Card>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };

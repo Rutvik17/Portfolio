@@ -1,15 +1,10 @@
-import memojiComputerImage from '@/assets/images/memoji-computer.png';
-import memojiHiImage from '@/assets/images/memoji-hi.png';
-import memojiUwuImage from '@/assets/images/memoji-uwu.png';
-import memojiBlessedImage from '@/assets/images/memoji-blessed.png';
-import memojiChefKissImage from '@/assets/images/memoji-chef-kiss.png';
-
 import Image from 'next/image';
 import ArrowDown from '@/assets/icons/arrow-down.svg';
 import grainImage from '@/assets/images/grain.jpg';
 import StarIcon from '@/assets/icons/star.svg';
 import { HeroOrbit } from '@/components/HeroOrbit';
 import SparkleIcon from '@/assets/icons/sparkle.svg';
+import { Memoji } from '@/components/Memoji';
 
 const stars = [
   { size: 800, rotation: -72, className: 'size-28 text-blue-300' },
@@ -30,11 +25,7 @@ const dots = [
   { size: 650, rotation: -5, className: 'size-2 rounded-full bg-blue-300/20' }
 ]
 
-const getMemojiImage = () => {
-  const images = [memojiComputerImage, memojiHiImage, memojiUwuImage, memojiBlessedImage, memojiChefKissImage];
-  const index = Math.floor(Math.random() * 5);
-  return images[index];
-}
+
 
 export const HeroSection = () => {
   return (
@@ -77,11 +68,7 @@ export const HeroSection = () => {
       </div>
       <div className="container">
         <div className='flex flex-col items-center'>
-          <Image
-            src={getMemojiImage()}
-            className='size-[100px]'
-            alt='Person peeking from behind laptop'
-          />
+          <Memoji />
           <div className='bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg'>
             <div className='bg-green-500 size-2.5 rounded-full'></div>
             <div className='text-sm font-medium'>RUTVIK PATEL</div>

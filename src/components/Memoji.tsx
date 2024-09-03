@@ -29,9 +29,9 @@ export const Memoji = () => {
     return (
         <motion.div
             key={memojiIndex}
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0.4, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.1 }}
+            exit={{ opacity: 0.4, scale: 1.2 }}
             transition={{
                 opacity: { duration: 1 },
                 scale: { duration: 1.2 },

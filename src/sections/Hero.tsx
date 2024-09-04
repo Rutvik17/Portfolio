@@ -7,26 +7,26 @@ import SparkleIcon from '@/assets/icons/sparkle.svg';
 import { Memoji } from '@/components/Memoji';
 
 const stars = [
-  { size: 590, rotation: 20, className: 'size-12 text-blue-300', shouldOrbit: true, orbitDuration: '50s', shouldSpin: true, spinDuration: '12s' },
-  { size: 690, rotation: 98, className: 'size-8 text-blue-300', shouldOrbit: true, orbitDuration: '50s', shouldSpin: true, spinDuration: '12s' },
-  { size: 720, rotation: -140, className: 'size-16 text-blue-300', shouldOrbit: true, orbitDuration: '50s', shouldSpin: true, spinDuration: '12s' },
-  { size: 800, rotation: -72, className: 'size-28 text-blue-300', shouldOrbit: true, orbitDuration: '50s', shouldSpin: true, spinDuration: '12s' },
+  { size: 590, rotation: 20, className: 'size-12 text-blue-300', shouldOrbit: true, orbitDuration: '56s', shouldSpin: true, spinDuration: '12s' },
+  { size: 690, rotation: 98, className: 'size-8 text-blue-300', shouldOrbit: true, orbitDuration: '56s', shouldSpin: true, spinDuration: '12s' },
+  { size: 720, rotation: -140, className: 'size-16 text-blue-300', shouldOrbit: true, orbitDuration: '56s', shouldSpin: true, spinDuration: '12s' },
+  { size: 800, rotation: -72, className: 'size-28 text-blue-300', shouldOrbit: true, orbitDuration: '56s', shouldSpin: true, spinDuration: '12s' },
 ]
 
 const sparkles = [
-  { size: 420, rotation: -14, className: 'size-8 text-blue-300/20', shouldOrbit: true, orbitDuration: '54s', shouldSpin: true, spinDuration: '12s' },
-  { size: 550, rotation: 79, className: 'size-5 text-blue-300/20', shouldOrbit: true, orbitDuration: '54s', shouldSpin: true, spinDuration: '12s' },
-  { size: 590, rotation: 178, className: 'size-10 text-blue-300/20', shouldOrbit: true, orbitDuration: '54s', shouldSpin: true, spinDuration: '12s' },
-  { size: 710, rotation: 144, className: 'size-14 text-blue-300/20', shouldOrbit: true, orbitDuration: '54s', shouldSpin: true, spinDuration: '12s' },
-  { size: 840, rotation: 60, className: 'size-14 text-blue-300/20', shouldOrbit: true, orbitDuration: '54s', shouldSpin: true, spinDuration: '12s' }
+  { size: 420, rotation: -14, className: 'size-8 text-blue-300/20', shouldOrbit: true, orbitDuration: '58s', shouldSpin: true, spinDuration: '12s' },
+  { size: 550, rotation: 79, className: 'size-5 text-blue-300/20', shouldOrbit: true, orbitDuration: '58s', shouldSpin: true, spinDuration: '12s' },
+  { size: 590, rotation: 178, className: 'size-10 text-blue-300/20', shouldOrbit: true, orbitDuration: '58s', shouldSpin: true, spinDuration: '12s' },
+  { size: 710, rotation: 144, className: 'size-14 text-blue-300/20', shouldOrbit: true, orbitDuration: '58s', shouldSpin: true, spinDuration: '12s' },
+  { size: 840, rotation: 60, className: 'size-14 text-blue-300/20', shouldOrbit: true, orbitDuration: '58s', shouldSpin: true, spinDuration: '12s' }
 ]
 
 const dots = [
-  { size: 520, rotation: -41, className: 'size-2 rounded-full bg-blue-300/20', shouldOrbit: true, orbitDuration: '58s', shouldSpin: false, spinDuration: '12s' },
-  { size: 650, rotation: -165, className: 'size-2 rounded-full bg-blue-300/20', shouldOrbit: true, orbitDuration: '58s', shouldSpin: false, spinDuration: '12s' },
-  { size: 720, rotation: 85, className: 'size-3 rounded-full bg-blue-300/20', shouldOrbit: true, orbitDuration: '58s', shouldSpin: false, spinDuration: '12s' },
-  { size: 790, rotation: -5, className: 'size-2 rounded-full bg-blue-300/20', shouldOrbit: true, orbitDuration: '58s', shouldSpin: false, spinDuration: '12s' },
-  { size: 820, rotation: -120, className: 'size-2 rounded-full bg-blue-300/20', shouldOrbit: true, orbitDuration: '58s', shouldSpin: false, spinDuration: '12s' }
+  { size: 520, rotation: -41, className: 'size-2 rounded-full bg-blue-300/20', shouldOrbit: true, orbitDuration: '60s', shouldSpin: false, spinDuration: '12s' },
+  { size: 650, rotation: -165, className: 'size-2 rounded-full bg-blue-300/20', shouldOrbit: true, orbitDuration: '60s', shouldSpin: false, spinDuration: '12s' },
+  { size: 720, rotation: 85, className: 'size-3 rounded-full bg-blue-300/20', shouldOrbit: true, orbitDuration: '60s', shouldSpin: false, spinDuration: '12s' },
+  { size: 790, rotation: -5, className: 'size-2 rounded-full bg-blue-300/20', shouldOrbit: true, orbitDuration: '60s', shouldSpin: false, spinDuration: '12s' },
+  { size: 820, rotation: -120, className: 'size-2 rounded-full bg-blue-300/20', shouldOrbit: true, orbitDuration: '60s', shouldSpin: false, spinDuration: '12s' }
 ]
 
 export const HeroSection = () => {

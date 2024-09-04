@@ -29,8 +29,8 @@ const dots = [
 
 export const HeroSection = () => {
   return (
-    <section className='py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip'>
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+    <section className='py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip' id='home'>
+      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)] -z-10">
 
         <div className="absolute inset-0 -z-30 opacity-5" style={{
           backgroundImage: `url(${grainImage.src})`
@@ -84,12 +84,12 @@ export const HeroSection = () => {
         </div>
         <div className='flex flex-col md:flex-row justify-center items-center mt-8 gap-4'>
           <button className='inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl'>
-            <span className='font-semibold'>Explore My Work</span>
+            <a href='#projects' className='font-semibold'>Explore My Work</a>
             <ArrowDown className='size-4' />
           </button>
           <button className='inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl'>
             <span>✉️</span>
-            <span className='font-semibold'>Get in touch</span>
+            <a href='mailto:patelrutvik1702@gmail.com' className='font-semibold'>Get in touch</a>
           </button>
         </div>
       </div>

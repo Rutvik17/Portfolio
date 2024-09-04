@@ -1,3 +1,4 @@
+'use client'
 import { Card } from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
@@ -19,6 +20,8 @@ import mapImage from '@/assets/images/map.png';
 import smileMemoji from '@/assets/images/memoji-smile.png';
 import CardHeader from "@/components/CardHeader";
 import Skills from "@/components/Skills";
+import { motion } from 'framer-motion';
+import { useRef } from "react";
 
 const skills = [
   { title: 'HTML5', iconType: HTMLIcon },
@@ -49,6 +52,7 @@ const hobbies = [
 ];
 
 export const AboutSection = () => {
+  const constraintRef = useRef(null);
   return (
     <section className="py-20 lg:py-28" id="about">
       <div className="container">
@@ -71,10 +75,15 @@ export const AboutSection = () => {
                 description="Explore the technologies and tools I use to craft exceptional digital experiences."
                 className=""
               />
-              <Skills skills={skills} className="" />
-              <Skills skills={skills}
+              <Skills
+                skills={skills}
+                className=""
+                skillsWrapperClassName="animate-move-left [animation-duration:30s]"
+              />
+              <Skills
+                skills={skills}
                 className="mt-6"
-                skillsWrapperClassName="-translate-x-1/2"
+                skillsWrapperClassName="animate-move-right [animation-duration:45s]"
               />
             </Card>
           </div>
@@ -85,27 +94,34 @@ export const AboutSection = () => {
                 description="Explore my interests and hobbies beyond the digital realm."
                 className="px-6 py-6"
               />
-              <div className="relative flex-1">
+              <div className="relative flex-1" ref={constraintRef}>
                 {hobbies.map((hobby) => {
                   return (
-                    <div key={hobby.title} className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-blue-300 to-sky-400 rounded-full py-1.5 absolute" style={{
-                      left: hobby.left,
-                      top: hobby.top
-                    }}>
+                    <motion.div
+                      key={hobby.title}
+                      className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-blue-300 to-sky-400 rounded-full py-1.5 absolute" style={{
+                        left: hobby.left,
+                        top: hobby.top
+                      }}
+                      drag
+                      dragConstraints={constraintRef}
+                    >
                       <span className="font-medium text-gray-950">
                         {hobby.title}
                       </span>
                       <span>
                         {hobby.emoji}
                       </span>
-                    </div>
+                    </motion.div>
                   )
                 })}
               </div>
             </Card>
             <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
               <Image src={mapImage} alt="Map" className="h-full w-full object-cover object-center" />
-              <div className="absolute top-60 left-1/2 -translate-x-14 -translate-y-14 size-20 rounded-full bg-gradient-to-r from-blue-300 to-sky-400 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
+              <div className="absolute top-60 left-1/2 -translate-x-14 -translate-y-14 size-20 rounded-full after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-300 to-sky-400 -z-10"></div>
                 <Image src={smileMemoji} alt="Smile memoji" className="size-20" />
               </div>
             </Card>

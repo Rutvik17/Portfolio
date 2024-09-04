@@ -48,9 +48,15 @@ export const ProjectsSection = () => {
           description="See how I transformed concepts into engaging digital experiences."
         />
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
-          {portfolioProjects.map((project) => {
+          {portfolioProjects.map((project, index) => {
             return (
-              <Card key={project.title} className='px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20'>
+              <Card
+                key={project.title}
+                className='px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky'
+                style={{
+                  top: `calc(64px + ${index * 40}px)`
+                }}
+              >
                 <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                   <div className="lg:pb-16">
                     <div className="uppercase bg-gradient-to-r from-blue-300 to-emerald-400 text-transparent bg-clip-text inline-flex gap-2 font-bold tracking-widest text-sm">
